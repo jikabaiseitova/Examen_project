@@ -3,6 +3,6 @@ from django.db import models
 
 
 class User(AbstractUser):
-    telegram_chat_id = models.CharField(max_length=9)
+    telegram_chat_id = models.CharField(max_length=10)
 
 
