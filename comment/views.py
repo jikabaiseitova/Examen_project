@@ -12,15 +12,6 @@ from .permissions import Permission
 from .serializers import ForumSerializer, CommentSerializer
 
 
-BOT_TOKEN = '6290334035:AAFWAdAhZG3RGAz9ZlJomSaY7nrSal9JFdo'
-
-
-def telegram_bot_sendtext(bot_token, bot_chatID, bot_message):
-    send_text = f'https://api.telegram.org/bot{bot_token}/sendMessage?chat_id={bot_chatID}&parse_mode=Markdown&text={bot_message}'
-    response = requests.get(send_text)
-    return response.json()
-
-
 class ForumListCreateApiView(ListCreateAPIView):
     queryset = Forum.objects.all()
     serializer_class = ForumSerializer
