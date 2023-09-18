@@ -7,6 +7,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
 from comment.models import bot
+from django.db.models.signals import post_save
 from .models import User
 from .serializers import AuthorSerializer
 
@@ -20,7 +21,7 @@ def telegram_bot_sendtext(bot_token, bot_chatID, bot_message):
     return response.json()
 
 
-@receiver(veb_forum_save, sender=User)
+@receiver(post_save, sender=User)
 def send_notification(sender, instance, **kwargs):
     if kwargs.get('created'):
         message = f"Добро пожаловать в наш форум, {instance.user.username}!"
