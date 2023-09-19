@@ -1,10 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.db import models
-import telebot
 
 User = get_user_model()
-
-bot = telebot.TeleBot('6107937292:AAF6sGWwygfT-YunuLvalkRhtJ-w9_RVmb4', parse_mode=None)
 
 
 class Forum(models.Model):

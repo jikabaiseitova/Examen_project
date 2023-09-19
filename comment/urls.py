@@ -4,7 +4,7 @@ from . import views
 urlpatterns = [
     path('forum/', views.ForumListCreateApiView.as_view()),
     path('news/<int:pk>/', views.ForumRetrieveUpdateDestroyApiView.as_view()),
-    path('forum/<int:pk>/comments/', views.post_retrieve_update_destroy_api_view),
-    path('forum/<int:pk>/comments/<int:id>/', views.CommentRetrieveUpdateDestroyAPIView.as_view()),
+    path('forum/<int:forum_id>/comments/', views.comment_list_create_api_view),
+    path('forum/<int:forum_id>/comments/<int:comment_id>/', views.comment_retrieve_update_destroy_api_view),
 
 ]
