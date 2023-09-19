@@ -21,14 +21,14 @@ def telegram_bot_sendtext(bot_token, bot_chatID, bot_message):
     return response.json()
 
 
-@receiver(post_save, sender=User)
-def send_notification(sender, instance, **kwargs):
-    if kwargs.get('created'):
-        message = f"Добро пожаловать в наш форум, {instance.user.username}!"
-        bot.send_message(chat_id=instance.user.telegram_chat_id, text=message, parse_mode='html')
-
-    if __name__ == '__main__':
-        bot.infinity_polling()
+# @receiver(post_save, sender=User)
+# def send_notification(sender, instance, **kwargs):
+#     if kwargs.get('created'):
+#         message = f"Добро пожаловать в наш форум, {instance.user.username}!"
+#         bot.send_message(chat_id=instance.user.telegram_chat_id, text=message, parse_mode='html')
+#
+#     if __name__ == '__main__':
+#         bot.infinity_polling()
 
 
 @api_view(http_method_names=['GET', 'POST'])
