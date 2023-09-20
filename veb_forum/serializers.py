@@ -1,5 +1,6 @@
 import requests
 from rest_framework import serializers
+from rest_framework.exceptions import ValidationError
 
 from .models import User
 
@@ -25,8 +26,7 @@ class AuthorSerializer(serializers.ModelSerializer):
         response.json()
         if validated_data['password'] == validated_data['password2']:
             author.set_password(validated_data['password'])
-            author.set_password(validated_data['password2'])
             author.save()
             return author
-        return ValueError("Wrong password!")
+        raise ValidationError("Wrong password!")
 

@@ -1,5 +1,7 @@
 django==4.2
-djangorestframework
+djangorestframework~=3.14.0
 pyTelegramBotAPI
 drf_yasg
 psycopg2
+
+requests
