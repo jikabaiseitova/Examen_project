@@ -5,7 +5,7 @@ class Permission(BasePermission):
     def has_object_permission(self, request, view, obj):
         if request.method in SAFE_METHODS:
             return True
-        if request.user and (request.user.is_authenticated or request.user.is_staff) and obj.user == request.user:
+        if request.user and (request.user.is_authenticated or request.user.is_staff) and obj.author == request.user:
             return True
         return False
 

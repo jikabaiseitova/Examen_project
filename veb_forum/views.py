@@ -1,4 +1,3 @@
-from django.contrib.sites import requests
 from rest_framework.authentication import TokenAuthentication
 from rest_framework import status
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
@@ -24,4 +23,3 @@ def author_list_api_view(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-

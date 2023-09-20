@@ -4,7 +4,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
 
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView, get_object_or_404
-from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly, IsAuthenticated
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 
 from .models import Forum, Comment
 from .permissions import Permission
@@ -21,7 +21,7 @@ class ForumListCreateApiView(ListCreateAPIView):
         serializer.save(author=self.request.user)
 
 
-class ForumRetrieveUpdateDestroyApiView(RetrieveUpdateDestroyAPIView):
+class ForumUpdateDestroyApiView(RetrieveUpdateDestroyAPIView):
     queryset = Forum.objects.all()
     serializer_class = ForumSerializer
     permission_classes = [Permission]
