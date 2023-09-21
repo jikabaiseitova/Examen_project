@@ -52,7 +52,7 @@ def comment_list_create_api_view(request, forum_id):
 
 @api_view(http_method_names=['GET', 'PUT', 'DELETE'])
 @authentication_classes([TokenAuthentication])
-@permission_classes([IsAuthenticated])
+@permission_classes([Permission])
 def comment_retrieve_update_destroy_api_view(request, forum_id, comment_id):
     comment = get_object_or_404(Comment, forum=forum_id, id=comment_id)
 
