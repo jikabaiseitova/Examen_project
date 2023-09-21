@@ -1,0 +1,9 @@
+django==4.2
+djangorestframework~=3.14.0
+pyTelegramBotAPI
+drf_yasg==1.21.7
+psycopg2-binary
+gunicorn==20.1.0
+
+requests
+

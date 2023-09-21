@@ -1,4 +1,16 @@
 .idea
 venv
-**/__pycache__/
+
+#staticfiles
+static
+media
+
+#envfiles
+.env
+.env.prod
+.env.prod.db
+
+#cache
+**/__pycache__
+
 db.sqlite3
